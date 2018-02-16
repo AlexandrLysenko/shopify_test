@@ -101,6 +101,10 @@
                 <div>
                   {{ item.line_price | money }}
                 </div>
+                
+                <!-- Bold: Loyalty Points - Step 5 -->
+ 				<span class="bold-loyalties-cart-points-{{forloop.index}}"></span>
+				<!-- // end bold code -->
 
                 {% for discount in item.discounts %}
                   <div class="cart-item__discount">{{ discount.title }}</div>
@@ -134,6 +138,11 @@
             <a href="collections/all" class="btn btn--secondary cart__update cart__continue--large small--hide" >{{ 'cart.general.continue_shopping' | t }}</a>
             <input type="submit" name="update" class="btn btn--secondary cart__update cart__update--large small--hide" value="{{ 'cart.general.update' | t }}">
             <input type="submit" name="checkout" class="btn btn--small-wide" value="{{ 'cart.general.checkout' | t }}">
+            
+            <!-- Bold: Loyalty Points - Step 5.1 -->
+ 			<p class="bold-loyalties-cart-earn"></p>
+			<!-- // end bold code -->
+            
             {% if additional_checkout_buttons %}
               <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
             {% endif %}
@@ -166,3 +175,10 @@
     ]
   }
 {% endschema %}
+
+
+<!-- Bold: Loyalty Points - Step 5.2 -->
+{% if shop.metafields.bold_loyalties.active == 1 %}
+ <script src="//loy.boldapps.net/front_end/cart_js?shop={{shop.domain}}"></script>
+{% endif %}
+<!-- // end bold code -->
