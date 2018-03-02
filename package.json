@@ -1,0 +1,17 @@
+{
+  "name": "webgearstudio",
+  "version": "1.0.0",
+  "description": "beerTask",
+  "main": "index.js",
+  "dependencies": {
+    "npm": "^5.7.1"
+  },
+  "devDependencies": {
+    "@shopify/slate-tools": "0.13.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
